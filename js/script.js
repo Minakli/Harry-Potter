@@ -56,7 +56,7 @@ function createHeader() {
   labelSchool.textContent = "School";
   inputName.setAttribute("type", "text");
   inputName.setAttribute("id", "input__name");
-  inputName.setAttribute("placeholder", "Hermione");
+  inputName.setAttribute("placeholder", "   Select unit");
   selectSchool.setAttribute("type", "text");
   selectSchool.setAttribute("id", "input__school");
   // optSchool_1.setAttribute("disabled", "disabled");
@@ -196,3 +196,5 @@ createMain();
 headForm.addEventListener("submit", (event) => {
   event.preventDefault();
 });
+inputName.addEventListener("input", createFilterDataArr);
+selectSchool.addEventListener("change", createFilterDataArr);
