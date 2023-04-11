@@ -2,7 +2,6 @@ import { importData } from "./data.js";
 const header = document.querySelector("header");
 const main = document.querySelector("main");
 const mainWrapper = document.createElement("div");
-const headForm = document.createElement("form");
 const inputName = document.createElement("input");
 const selectSchool = document.createElement("select");
 
@@ -19,14 +18,17 @@ const schoolsTmp = importData.map((elem) =>
 );
 const schools = [...new Set(schoolsTmp)].filter((item) => item !== null);
 
-//Отрисовка header
+//header
 function createHeader() {
   const headerContainer = document.createElement("div");
+  const headForm = document.createElement("form");
   const h1 = document.createElement("h1");
   const h2 = document.createElement("h2");
   const labelName = document.createElement("label");
   const labelSchool = document.createElement("label");
   const optSchool_1 = document.createElement("option");
+  headForm.classList.add("header__form");
+  // headForm.setAttribute()
   headerContainer.classList.add("header__container");
   h1.textContent = "Harry Potter";
   h2.textContent = "View all characters from the Harry Potter universe";
@@ -37,8 +39,10 @@ function createHeader() {
   inputName.setAttribute(`type`, `text`);
   inputName.setAttribute("id", "input__name");
   inputName.setAttribute("placeholder", "   Select unit");
+  inputName.classList.add("header__input");
   selectSchool.setAttribute("type", "text");
   selectSchool.setAttribute("id", "input__school");
+  selectSchool.classList.add("header__select");
   optSchool_1.setAttribute("selected", "selected");
   optSchool_1.textContent = "Choose one";
   optSchool_1.setAttribute("value", "");
